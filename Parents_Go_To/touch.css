@@ -1,0 +1,52 @@
+@media (hover: none) {
+  :is(#page-app, #page-admin) .app-nav button:not([aria-selected="true"]):hover {
+    background: transparent;
+    color: var(--ink-60);
+  }
+  :is(#page-app, #page-admin) .who:not([aria-expanded="true"]):hover {
+    background: none;
+    border-color: transparent;
+  }
+}
+@media (hover: none) and (min-width: 1180px) {
+  #page-admin .app-nav button:not([aria-selected="true"]):hover { color: #BFD4E2; }
+}
+
+@media (max-width: 400px) {
+  :is(#page-app, #page-admin) .app-bar-inner { gap: .5rem; }
+  :is(#page-app, #page-admin) .bar-actions { gap: .2rem; }
+  :is(#page-app, #page-admin) .who { padding-inline: .2rem; gap: .25rem; }
+  :is(#page-app, #page-admin) .brand { gap: .4rem; }
+  :is(#page-app, #page-admin) .brand-mark { width: 34px; height: 31px; }
+  :is(#page-app, #page-admin) .brand-text .l1 { font-size: .68rem; }
+  :is(#page-app, #page-admin) .brand-text .l2 { font-size: .95rem; }
+}
+@media (max-width: 359.98px) {
+  :is(#page-app, #page-admin) .app-bar-inner .brand-text { display: none; }
+  :is(#page-app, #page-admin) .who .chev { display: none; }
+}
+
+@media (max-width: 520px) {
+  #page-admin .admin-badge { font-size: 0; gap: 0; padding: .4rem; }
+  #page-admin .admin-badge svg { width: 16px; height: 16px; }
+}
+
+@media (max-width: 720px) {
+  html.kb-open :is(#page-app, #page-admin) .app-nav {
+    transform: translateY(100%);
+    visibility: hidden;
+  }
+}
+
+@media (max-height: 460px) and (orientation: landscape) {
+  :is(#page-app, #page-admin) .app-bar {
+    transition: transform .25s var(--ease-out, ease);
+  }
+  html.bar-tucked :is(#page-app, #page-admin) .app-bar {
+    transform: translateY(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(#page-app, #page-admin) .app-bar { transition: none; }
+}

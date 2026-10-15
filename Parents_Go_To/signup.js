@@ -19,11 +19,11 @@
     if (email.indexOf("@") === -1 || email.indexOf(".") === -1) {
       return fail("That address is missing an @ or a full stop.");
     }
-    result.textContent = "Done. We will email " + email + " when a new service opens near you.";
+    window.location.href = "mailto:tsander2@usc.edu.au?subject=" + encodeURIComponent("Keep me posted") + "&body=" + encodeURIComponent("Please let me know at " + email + " when a new service opens near me.");
+    result.textContent = "Your email app should open with the request ready to send.";
     field.value = "";
   }
   button.addEventListener("click", submit);
-  // The field is not inside a form, so Enter (or "Go" on a phone keyboard) needs wiring up.
   field.addEventListener("keydown", function(event) {
     if (event.key === "Enter") { event.preventDefault(); submit(); }
   });
